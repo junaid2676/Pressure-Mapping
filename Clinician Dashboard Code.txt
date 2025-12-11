@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>exported project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;  color: inherit;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}pre {  white-space: normal;}input {  padding: 2px 4px;}img {  display: block;}details {  display: block;  margin: 0;  padding: 0;}summary::-webkit-details-marker {  display: none;}[data-thq="accordion"] [data-thq="accordion-content"] {  max-height: 0;  overflow: hidden;  transition: max-height 0.3s ease-in-out;  padding: 0;}[data-thq="accordion"] details[data-thq="accordion-trigger"][open] + [data-thq="accordion-content"] {  max-height: 1000vh;}details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] {  transform: rotate(180deg);}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background: var(--dl-color-theme-neutral-light);
+
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./index.css" rel="stylesheet" />
+
+      <div class="dashboard-container1">
+        <div class="dashboard-dashboard1">
+          <div class="dashboard-dashboard2">
+            <img
+              src="public/line521708-u67.svg"
+              alt="Line521708"
+              class="dashboard-line51"
+            />
+            <div class="dashboard-frame281">
+              <div class="dashboard-frame49">
+                <div class="dashboard-frame48">
+                  <span class="dashboard-text10">Pritya Patel</span>
+                  <div class="dashboard-frame201">
+                    <span class="dashboard-text11">New Request</span>
+                  </div>
+                </div>
+                <div class="dashboard-frame471">
+                  <div class="dashboard-frame35">
+                    <div class="dashboard-frame31">
+                      <span class="dashboard-text12">Date of Birth</span>
+                      <span class="dashboard-text13">Jan 1, 1980</span>
+                    </div>
+                    <div class="dashboard-frame33">
+                      <span class="dashboard-text14">Gender</span>
+                      <span class="dashboard-text15">Female</span>
+                    </div>
+                    <div class="dashboard-frame341">
+                      <span class="dashboard-text16">NHS No.</span>
+                      <span class="dashboard-text17">4214552135</span>
+                    </div>
+                  </div>
+                  <div class="dashboard-frame32">
+                    <span class="dashboard-text18">Indication</span>
+                    <span class="dashboard-text19">Medical - Red eye</span>
+                  </div>
+                  <div class="dashboard-frame43">
+                    <div class="dashboard-frame342">
+                      <span class="dashboard-text20">Risk</span>
+                      <span class="dashboard-text21">Extremely Low</span>
+                    </div>
+                    <div class="dashboard-frame36">
+                      <span class="dashboard-text22">Symptoms</span>
+                      <span class="dashboard-text23">Extremely Low</span>
+                    </div>
+                  </div>
+                  <div class="dashboard-frame44">
+                    <div class="dashboard-frame37">
+                      <span class="dashboard-text24">N&amp;V</span>
+                      <span class="dashboard-text25">No</span>
+                    </div>
+                    <div class="dashboard-frame38">
+                      <span class="dashboard-text26">Chemicals</span>
+                      <span class="dashboard-text27">No</span>
+                    </div>
+                  </div>
+                  <div class="dashboard-frame45">
+                    <div class="dashboard-frame41">
+                      <span class="dashboard-text28">Injury:</span>
+                      <span class="dashboard-text29">No</span>
+                    </div>
+                    <div class="dashboard-frame39">
+                      <span class="dashboard-text30">Site</span>
+                      <span class="dashboard-text31">Spread</span>
+                    </div>
+                  </div>
+                  <div class="dashboard-frame46">
+                    <div class="dashboard-frame42">
+                      <span class="dashboard-text32">Progress</span>
+                      <span class="dashboard-text33">Worsening</span>
+                    </div>
+                    <div class="dashboard-frame40">
+                      <span class="dashboard-text34">Severity</span>
+                      <span class="dashboard-text35">6/10</span>
+                    </div>
+                  </div>
+                  <div class="dashboard-frame472">
+                    <div class="dashboard-frame50">
+                      <img
+                        src="public/chevrondown21708-eu6h.svg"
+                        alt="chevrondown21708"
+                        class="dashboard-chevrondown"
+                      />
+                      <span class="dashboard-text36">Review History</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dashboard-frame251">
+                <span class="dashboard-text37">Action</span>
+              </div>
+            </div>
+            <div class="dashboard-frame51">
+              <span class="dashboard-text38">Welcome back, Junaid</span>
+              <div class="dashboard-frame56">
+                <div class="dashboard-notification">
+                  <img
+                    src="public/icon21708-bvg.svg"
+                    alt="Icon21708"
+                    class="dashboard-icon1"
+                  />
+                  <div class="dashboard-frame191"></div>
+                </div>
+                <img
+                  src="public/ellipse121708-lmg-200h.png"
+                  alt="Ellipse121708"
+                  class="dashboard-ellipse1"
+                />
+              </div>
+            </div>
+            <div class="dashboard-frame53">
+              <div class="dashboard-frame202">
+                <span class="dashboard-text39">New Requests</span>
+              </div>
+              <div class="dashboard-frame231">
+                <span class="dashboard-text40">Assigned Tasks</span>
+              </div>
+              <div class="dashboard-frame241">
+                <span class="dashboard-text41">Reviews</span>
+              </div>
+            </div>
+            <div class="dashboard-frame5">
+              <span class="dashboard-text42">Your Requests</span>
+              <div class="dashboard-frame271">
+                <div class="dashboard-frame261">
+                  <span class="dashboard-text43">11</span>
+                  <span class="dashboard-text44">Total Active Requests</span>
+                </div>
+                <div class="dashboard-frame252">
+                  <span class="dashboard-text45">Actionable Items</span>
+                </div>
+                <div class="dashboard-frame272">
+                  <span class="dashboard-text46">Upon Patient Actions</span>
+                </div>
+              </div>
+            </div>
+            <div class="dashboard-request">
+              <div class="dashboard-frame203">
+                <div class="dashboard-frame262">
+                  <div class="dashboard-frame181">
+                    <span class="dashboard-text47">Search</span>
+                    <img
+                      src="public/search21708-wvga.svg"
+                      alt="search21708"
+                      class="dashboard-search"
+                    />
+                  </div>
+                  <span class="dashboard-text48">Filter</span>
+                  <div class="dashboard-frame192">
+                    <span class="dashboard-text49">Status: Actionable</span>
+                    <img
+                      src="public/close21708-u3jv.svg"
+                      alt="close21708"
+                      class="dashboard-close"
+                    />
+                  </div>
+                </div>
+                <span class="dashboard-text50">
+                  Last updated: 19 Oct 2025 10:45 AM
+                </span>
+              </div>
+              <div class="dashboard-frame55">
+                <span class="dashboard-text51">Tasks</span>
+                <div class="dashboard-frame193"></div>
+              </div>
+              <div class="dashboard-frame282">
+                <div class="dashboard-frame7">
+                  <div class="dashboard-frame91">
+                    <div class="dashboard-frame16">
+                      <span class="dashboard-text52">Status</span>
+                      <img
+                        src="public/sort21708-vwx.svg"
+                        alt="sort21708"
+                        class="dashboard-sort1"
+                      />
+                    </div>
+                    <div class="dashboard-frame29">
+                      <div class="dashboard-frame194">
+                        <span class="dashboard-text53">New Request</span>
+                      </div>
+                      <div class="dashboard-frame204">
+                        <span class="dashboard-text54">New Request</span>
+                      </div>
+                      <div class="dashboard-frame211">
+                        <span class="dashboard-text55">New Request</span>
+                      </div>
+                      <div class="dashboard-frame221">
+                        <span class="dashboard-text56">New Request</span>
+                      </div>
+                      <div class="dashboard-frame232">
+                        <span class="dashboard-text57">New Request</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dashboard-frame101">
+                    <div class="dashboard-frame17">
+                      <span class="dashboard-text58">Patient Name</span>
+                      <img
+                        src="public/sort21708-l79f.svg"
+                        alt="sort21708"
+                        class="dashboard-sort2"
+                      />
+                    </div>
+                    <span class="dashboard-text59">Anush</span>
+                    <span class="dashboard-text60">Aman</span>
+                    <span class="dashboard-text61">Bilal</span>
+                    <span class="dashboard-text62">Yuhan</span>
+                    <span class="dashboard-text63">Priya Patel</span>
+                  </div>
+                  <div class="dashboard-frame11">
+                    <div class="dashboard-frame182">
+                      <span class="dashboard-text64">Date of Birth</span>
+                      <img
+                        src="public/sort21708-bx1k.svg"
+                        alt="sort21708"
+                        class="dashboard-sort3"
+                      />
+                    </div>
+                    <span class="dashboard-text65">Jan 5, 2001</span>
+                    <span class="dashboard-text66">Aug 2, 1995</span>
+                    <span class="dashboard-text67">Feb 1, 1970</span>
+                    <span class="dashboard-text68">Jan 1, 1980</span>
+                    <span class="dashboard-text69">Jan 1, 1980</span>
+                  </div>
+                  <div class="dashboard-frame12">
+                    <span class="dashboard-text70">Indication</span>
+                    <span class="dashboard-text71">Medical - Red eye</span>
+                    <span class="dashboard-text72">Medical - Red eye</span>
+                    <span class="dashboard-text73">Medical - Red eye</span>
+                    <span class="dashboard-text74">Medical - Red eye</span>
+                    <span class="dashboard-text75">Medical - Red eye</span>
+                  </div>
+                  <div class="dashboard-frame13">
+                    <div class="dashboard-frame195">
+                      <span class="dashboard-text76">Last Updated</span>
+                      <img
+                        src="public/sort21708-si9q.svg"
+                        alt="sort21708"
+                        class="dashboard-sort4"
+                      />
+                    </div>
+                    <span class="dashboard-text77">08/02/22 09:51</span>
+                    <span class="dashboard-text78">08/02/22 09:51</span>
+                    <span class="dashboard-text79">08/02/22 09:51</span>
+                    <span class="dashboard-text80">08/02/22 09:51</span>
+                    <span class="dashboard-text81">08/02/22 09:51</span>
+                  </div>
+                  <div class="dashboard-frame14">
+                    <span class="dashboard-text82">Assign</span>
+                    <img
+                      src="public/useradd21708-q81d.svg"
+                      alt="useradd21708"
+                      class="dashboard-useradd1"
+                    />
+                    <img
+                      src="public/useradd21708-4zle.svg"
+                      alt="useradd21708"
+                      class="dashboard-useradd2"
+                    />
+                    <img
+                      src="public/useradd21708-r2up.svg"
+                      alt="useradd21708"
+                      class="dashboard-useradd3"
+                    />
+                    <img
+                      src="public/useradd21708-rayt.svg"
+                      alt="useradd21708"
+                      class="dashboard-useradd4"
+                    />
+                    <img
+                      src="public/useradd21708-s4iw.svg"
+                      alt="useradd21708"
+                      class="dashboard-useradd5"
+                    />
+                  </div>
+                  <div class="dashboard-frame15">
+                    <span class="dashboard-text83">Action</span>
+                    <div class="dashboard-frame30">
+                      <div class="dashboard-frame212">
+                        <span class="dashboard-text84">Action</span>
+                      </div>
+                      <div class="dashboard-frame222">
+                        <span class="dashboard-text85">Action</span>
+                      </div>
+                      <div class="dashboard-frame233">
+                        <span class="dashboard-text86">Action</span>
+                      </div>
+                      <div class="dashboard-frame242">
+                        <span class="dashboard-text87">Action</span>
+                      </div>
+                      <div class="dashboard-frame263">
+                        <span class="dashboard-text88">Action</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dashboard-frame213">
+                  <img
+                    src="public/line121708-b8a.svg"
+                    alt="Line121708"
+                    class="dashboard-line1"
+                  />
+                  <img
+                    src="public/line221708-63re.svg"
+                    alt="Line221708"
+                    class="dashboard-line2"
+                  />
+                  <img
+                    src="public/line321708-8ta6.svg"
+                    alt="Line321708"
+                    class="dashboard-line3"
+                  />
+                  <img
+                    src="public/line421708-iyk.svg"
+                    alt="Line421708"
+                    class="dashboard-line4"
+                  />
+                  <img
+                    src="public/line521708-jdo.svg"
+                    alt="Line521708"
+                    class="dashboard-line52"
+                  />
+                </div>
+              </div>
+              <div class="dashboard-frame54">
+                <span class="dashboard-text89">Patient Requests</span>
+                <div class="dashboard-frame196"></div>
+              </div>
+            </div>
+          </div>
+          <div class="dashboard-frame">
+            <div class="dashboard-side-bar">
+              <div class="dashboard-frame92">
+                <img
+                  src="public/document21708-12e.svg"
+                  alt="document21708"
+                  class="dashboard-document"
+                />
+                <img
+                  src="public/medicallogo1removebgpreview121708-pxla-200h.png"
+                  alt="MedicalLogo1removebgpreview121708"
+                  class="dashboard-medical-logo1removebgpreview1"
+                />
+                <div class="dashboard-framesidebarbtn1">
+                  <img
+                    src="public/iconssquaresfour21708-yxy.svg"
+                    alt="IconsSquaresFour21708"
+                    class="dashboard-icons-squares-four"
+                  />
+                  <span class="dashboard-text90 SMMedium">Dashboard</span>
+                </div>
+                <div class="dashboard-framesidebarbtn2">
+                  <span class="dashboard-text91 SMMedium">Quick Assign</span>
+                </div>
+                <div class="dashboard-framesidebarbtn3">
+                  <img
+                    src="public/iconschecksquareoffset21708-xuva.svg"
+                    alt="IconsCheckSquareOffset21708"
+                    class="dashboard-icons-check-square-offset"
+                  />
+                  <span class="dashboard-text92 SMMedium">Appointments</span>
+                </div>
+                <div class="dashboard-framesidebarbtn4">
+                  <span class="dashboard-text93 SMMedium">
+                    Contact Patients
+                  </span>
+                </div>
+                <div class="dashboard-framesidebarbtn5">
+                  <img
+                    src="public/list21708-8107.svg"
+                    alt="list21708"
+                    class="dashboard-list"
+                  />
+                  <span class="dashboard-text94 SMMedium">
+                    Organisation settings
+                  </span>
+                </div>
+                <img
+                  src="public/send21708-7qga.svg"
+                  alt="send21708"
+                  class="dashboard-send"
+                />
+              </div>
+              <div class="dashboard-frame264">
+                <div class="dashboard-frame102">
+                  <div class="dashboard-framesidebarbtn6">
+                    <img
+                      src="public/iconsuseri2170-ue9g.svg"
+                      alt="IconsUserI2170"
+                      class="dashboard-icons-user"
+                    />
+                    <span class="dashboard-text95 SMMedium">Account</span>
+                  </div>
+                  <div class="dashboard-framesidebarbtn7">
+                    <img
+                      src="public/iconssignouti2170-66e8.svg"
+                      alt="IconsSignOutI2170"
+                      class="dashboard-icons-sign-out"
+                    />
+                    <span class="dashboard-text96 SMMedium">Logout</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="https://play.teleporthq.io/signup" class="dashboard-link">
+          <div aria-label="Sign up to TeleportHQ" class="dashboard-container2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 19 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="dashboard-icon2"
+            >
+              <path
+                d="M9.1017 4.64355H2.17867C0.711684 4.64355 -0.477539 5.79975 -0.477539 7.22599V13.9567C-0.477539 15.3829 0.711684 16.5391 2.17867 16.5391H9.1017C10.5687 16.5391 11.7579 15.3829 11.7579 13.9567V7.22599C11.7579 5.79975 10.5687 4.64355 9.1017 4.64355Z"
+                fill="#B23ADE"
+              ></path>
+              <path
+                d="M10.9733 12.7878C14.4208 12.7878 17.2156 10.0706 17.2156 6.71886C17.2156 3.3671 14.4208 0.649963 10.9733 0.649963C7.52573 0.649963 4.73096 3.3671 4.73096 6.71886C4.73096 10.0706 7.52573 12.7878 10.9733 12.7878Z"
+                fill="#FF5C5C"
+              ></path>
+              <path
+                d="M17.7373 13.3654C19.1497 14.1588 19.1497 15.4634 17.7373 16.2493L10.0865 20.5387C8.67402 21.332 7.51855 20.6836 7.51855 19.0968V10.5141C7.51855 8.92916 8.67402 8.2807 10.0865 9.07221L17.7373 13.3654Z"
+                fill="#2874DE"
+              ></path>
+            </svg>
+            <span class="dashboard-text97">Built in TeleportHQ</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

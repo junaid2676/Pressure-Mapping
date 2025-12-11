@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - Doctor Dashboard</title>
+    <link rel="stylesheet" href="doctor-styles.css">
+    <style>
+        .appointments-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .appointment-filters {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .filter-chip {
+            padding: 8px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            background: var(--white);
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-chip.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .appointment-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+            transition: all 0.2s;
+        }
+
+        .appointment-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .appointment-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .appointment-date-badge {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .appointment-date-badge .day {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .appointment-date-badge .month {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .appointment-status {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .appointment-status.upcoming {
+            background: rgba(98, 77, 227, 0.1);
+            color: var(--primary-color);
+        }
+
+        .appointment-status.completed {
+            background: rgba(39, 174, 96, 0.1);
+            color: var(--success-color);
+        }
+
+        .appointment-status.cancelled {
+            background: rgba(231, 76, 60, 0.1);
+            color: var(--error-color);
+        }
+
+        .appointment-info {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .appointment-detail {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .appointment-detail svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .patient-info-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: var(--bg-color);
+            border-radius: var(--radius-sm);
+            margin-bottom: 16px;
+        }
+
+        .patient-avatar-large {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            border: 3px solid var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .patient-info-large h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .patient-info-large p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .appointment-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline:hover {
+            background: var(--bg-color);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-success {
+            background: var(--success-color);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-success:hover {
+            background: #229954;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="menuToggle" onclick="toggleSidebar()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12h18M3 6h18M3 18h18"/>
+            </svg>
+        </button>
+
+        <!-- Overlay for mobile -->
+        <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="logo-container">
+                    <img src="Medical_Logo__1_-removebg-preview.png" alt="Medical Logo" class="logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none; font-size: 24px; font-weight: bold; color: var(--primary-color);">HealthCare</div>
+                </div>
+
+                <nav>
+                    <a href="doctor-dashboard.html" class="nav-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="doctor-patients.html" class="nav-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <span>My Patients</span>
+                    </a>
+                    <a href="doctor-appointments.html" class="nav-item active">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+                            <path d="M3 10h18M8 2v4M16 2v4"></path>
+                        </svg>
+                        <span>Appointments</span>
+                    </a>
+                    <a href="doctor-profile.html" class="nav-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span>My Profile</span>
+                    </a>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <a href="doctor-profile.html" class="nav-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="18" x2="12" y2="22"></line>
+                            <line x1="8" y1="22" x2="16" y2="22"></line>
+                        </svg>
+                        <span>Settings</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="handleLogout()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-top">
+                    <h1>My Appointments</h1>
+                    <div class="header-right">
+                        <div class="notification-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                            <span class="notification-badge">5</span>
+                        </div>
+                        <div class="user-avatar">
+                            <img src="https://via.placeholder.com/40" alt="Doctor" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="avatar-fallback" style="display:none;">DS</div>
+                        </div>
+                    </div>
+                </div>
+                <p class="header-subtitle">Manage your appointment schedule</p>
+            </div>
+
+            <!-- Appointments Header -->
+            <div class="appointments-header">
+                <div class="appointment-filters">
+                    <button class="filter-chip active" onclick="filterAppointments('all')">All</button>
+                    <button class="filter-chip" onclick="filterAppointments('today')">Today</button>
+                    <button class="filter-chip" onclick="filterAppointments('upcoming')">Upcoming</button>
+                    <button class="filter-chip" onclick="filterAppointments('completed')">Completed</button>
+                </div>
+                <button class="btn-primary" onclick="scheduleAvailability()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+                        <path d="M3 10h18M8 2v4M16 2v4"></path>
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    Schedule Availability
+                </button>
+            </div>
+
+            <!-- Appointments List -->
+            <div id="appointmentsList">
+                <!-- Upcoming Appointment -->
+                <div class="appointment-card" data-status="upcoming">
+                    <div class="appointment-card-header">
+                        <div class="appointment-date-badge">
+                            <div class="day">15</div>
+                            <div class="month">Dec</div>
+                        </div>
+                        <span class="appointment-status upcoming">Upcoming</span>
+                    </div>
+                    <div class="patient-info-section">
+                        <div class="patient-avatar-large">JD</div>
+                        <div class="patient-info-large">
+                            <h3>John Doe</h3>
+                            <p>Patient ID: PAT-2025-001234</p>
+                            <p style="font-size: 12px; color: var(--text-tertiary);">Age: 40 | Regular Patient</p>
+                        </div>
+                    </div>
+                    <div class="appointment-info">
+                        <div class="appointment-detail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>10:00 AM - 10:30 AM</span>
+                        </div>
+                        <div class="appointment-detail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Room 205</span>
+                        </div>
+                        <div class="appointment-detail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                            <span>Regular Check-up</span>
+                        </div>
+                    </div>
+                    <div class="appointment-actions">
+                        <button class="btn-success" onclick="startAppointment(1)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                            Start Appointment
+                        </button>
+                        <button class="btn-outline" onclick="rescheduleAppointment(1)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            Reschedule
+                        </button>
+                        <button class="btn-outline" onclick="viewPatientRecord(1)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            View Record
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Completed Appointment -->
+                <div class="appointment-card" data-status="completed">
+                    <div class="appointment-card-header">
+                        <div class="appointment-date-badge" style="background: var(--success-color);">
+                            <div class="day">10</div>
+                            <div class="month">Dec</div>
+                        </div>
+                        <span class="appointment-status completed">Completed</span>
+                    </div>
+                    <div class="patient-info-section">
+                        <div class="patient-avatar-large" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">JS</div>
+                        <div class="patient-info-large">
+                            <h3>Jane Smith</h3>
+                            <p>Patient ID: PAT-2025-001235</p>
+                            <p style="font-size: 12px; color: var(--text-tertiary);">Age: 35 | Follow-up Patient</p>
+                        </div>
+                    </div>
+                    <div class="appointment-info">
+                        <div class="appointment-detail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>02:30 PM - 03:00 PM</span>
+                        </div>
+                        <div class="appointment-detail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Room 205</span>
+                        </div>
+                        <div class="appointment-detail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                            <span>Follow-up Consultation</span>
+                        </div>
+                    </div>
+                    <div class="appointment-actions">
+                        <button class="btn-outline" onclick="viewAppointmentDetails(2)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            View Details
+                        </button>
+                        <button class="btn-outline" onclick="writeReport(2)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                            Write Report
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+        }
+
+        function handleLogout() {
+            try {
+                localStorage.removeItem('authUser');
+                localStorage.removeItem('authRole');
+            } catch (err) {}
+            window.location.href = 'login.html';
+        }
+
+        function filterAppointments(status) {
+            document.querySelectorAll('.filter-chip').forEach(chip => {
+                chip.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.appointment-card');
+            cards.forEach(card => {
+                if (status === 'all' || card.dataset.status === status) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function scheduleAvailability() {
+            alert('Schedule availability calendar would open here');
+        }
+
+        function startAppointment(id) {
+            alert('Starting appointment #' + id);
+        }
+
+        function rescheduleAppointment(id) {
+            alert('Reschedule appointment #' + id);
+        }
+
+        function viewPatientRecord(id) {
+            window.location.href = 'doctor-patients.html';
+        }
+
+        function viewAppointmentDetails(id) {
+            alert('View appointment details #' + id);
+        }
+
+        function writeReport(id) {
+            alert('Write report for appointment #' + id);
+        }
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('overlay');
+                sidebar.classList.remove('open');
+                overlay.classList.remove('active');
+            }
+        });
+    </script>
+    <script>
+        (function(){
+            try {
+                var role = localStorage.getItem('authRole');
+                if (!role || role !== 'doctor') {
+                    window.location.href = 'login.html';
+                }
+            } catch (err) {
+                window.location.href = 'login.html';
+            }
+        })();
+    </script>
+</body>
+</html>
